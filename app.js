@@ -12,7 +12,7 @@ app.use(adminPage);
 app.use(shopPage);
 
 app.use((req, res, next) => {
-  req.status(404).send(`
+  res.status(404).send(`
     <html>
       <head>
         <title>404 - Page Not Found</title>
