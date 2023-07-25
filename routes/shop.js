@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const adminRouter = require('./routes/admin');
-const shopRouter = require('./routes/shop');
-
 router.get('/', (req, res, next) => {
   res.send(`
       <html>
@@ -17,8 +14,5 @@ router.get('/', (req, res, next) => {
       </html>
   `);
 });
-
-router.get(adminRouter);
-router.get(shopRouter);
 
 module.exports = router;
