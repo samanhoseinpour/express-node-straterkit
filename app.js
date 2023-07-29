@@ -1,5 +1,8 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+
+const rootDir = require('./utils/path');
 
 const app = express();
 
@@ -12,16 +15,7 @@ app.use('/admin', adminPage);
 app.use(shopPage);
 
 app.use((req, res, next) => {
-  res.status(404).send(`
-    <html>
-      <head>
-        <title>404 - Page Not Found</title>
-      </head>
-      <body>
-        <h1>The page which you are looking for doesn't exist.</h1>
-      </body>
-    </html>
-  `);
+  res.sendFile(path.join(rootDir, 'views', '404.html'));
 });
 
 app.listen(3000);
