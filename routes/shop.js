@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
         </head>
         <body>
           <h1>This Shoping Page is rendering by ExpressJS</h1>
-          <a href="/add-product"><button>Order Product</button></a>
+          <a href="/admin/add-product"><button>Order Product</button></a>
         </body>
       </html>
   `);
