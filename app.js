@@ -6,16 +6,21 @@ const rootDir = require('./utils/path');
 
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', 'views');
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const adminPage = require('./routes/admin');
+const adminData = require('./routes/admin');
 const shopPage = require('./routes/shop');
 
-app.use('/admin', adminPage);
+app.use('/admin', adminData.routes);
 app.use(shopPage);
 
 app.use((req, res, next) => {
-  res.sendFile(path.join(rootDir, 'views', '404.html'));
+  res.render('404', {
+    pageTitle: '404 Error - Page Not Found',
+  });
 });
 
 app.listen(3000);
