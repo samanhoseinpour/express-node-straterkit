@@ -1,0 +1,20 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{pageTitle}
+    script(src="https://cdn.tailwindcss.com")
+  body
+    header
+      nav
+        ul.flex.justify-around.py-6
+          li
+            a(href="/") Home
+          li
+            a.rounded-full.bg-blue-600.text-white.p-2.w-full(href="#") + Add Product
+    main.bg-gray-400.rounded-md.bg-clip-padding.backdrop-filter.backdrop-blur-sm.bg-opacity-10.border.border-gray-100.py-10.gap-5.h-screen
+      div.flex.flex-col.justify-center.items-center
+        h1.font-extrabold.text-blue-500.capitalize This is a Ordering view of our Shoping Page
+        form.flex.justify-around.gap-10.mt-10(action="/admin/add-product", method="POST")
+          input(type="text", name="product", required, class="border-b border-solid border-b-2 border-blue-500 p-2 bg-transparent outline-none", placeholder="Add Product...")
+          button(type="submit", class="border-solid border-b-2 border-blue-500 p-2 text-blue-500") Add to Card
