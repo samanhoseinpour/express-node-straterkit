@@ -10,6 +10,7 @@ router.get('/', (req, res, next) => {
   res.render('shop', {
     prods: products,
     docTitle: 'My Shop',
+    homePath: '/',
   });
 });
 
