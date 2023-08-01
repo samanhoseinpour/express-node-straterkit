@@ -7,31 +7,37 @@ module.exports = class Product {
   }
 
   save() {
-    const pth = path.join(
+    const filePath = path.join(
       path.dirname(process.mainModule.filename),
       'data',
-      'product.json'
+      'products.json'
     );
-    fs.readFile(pth, (err, fileContent) => {
+    fs.readFile(filePath, (err, fileContent) => {
       let products = [];
       if (!err) {
         products = JSON.parse(fileContent);
       }
       products.push(this);
-      fs.writeFile(pth, JSON.stringify(products), (err) => {
-        console.log(err);
+      fs.writeFile(filePath, JSON.stringify(products), (err) => {
+        if (err) {
+          console.log(err);
+        }
       });
     });
   }
 
-  static fetchAll() {
-    const pth = path.join(
+  static fetchAll(cb) {
+    const filePath = path.join(
       path.dirname(process.mainModule.filename),
       'data',
-      'product.json'
+      'products.json'
     );
-    fs.readFile(pth, (err, fileContent) => {
-      err ? [] : JSON.parse(fileContent);
+    fs.readFile(filePath, (err, fileContent) => {
+      if (err) {
+        cb([]);
+      } else {
+        cb(JSON.parse(fileContent));
+      }
     });
   }
 };
