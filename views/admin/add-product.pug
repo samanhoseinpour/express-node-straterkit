@@ -6,11 +6,14 @@ html(lang="en")
     script(src="https://cdn.tailwindcss.com")
   body
     include ../includes/navigation.pug
-    main.bg-gray-400.rounded-md.bg-clip-padding.backdrop-filter.backdrop-blur-sm.bg-opacity-10.border.border-gray-100.py-10.gap-5.h-screen
+    main.bg-gray-400.rounded-md.bg-clip-padding.backdrop-filter.backdrop-blur-sm.bg-opacity-10.border.border-gray-100.py-20.h-screen
       div.flex.flex-col.justify-center.items-center
         h1.font-extrabold.text-blue-500.capitalize This is a Ordering view of our Shoping Page
-        form.flex.justify-around.gap-10.mt-10(action="/admin/add-product", method="POST")
-          input(type="text", name="product", required, class="border-b border-solid border-b-2 border-blue-500 p-2 bg-transparent outline-none", placeholder="Add Product...")
-          button(type="submit", class="border-solid border-b-2 border-blue-500 p-2 text-blue-500") Add to Card
+        form.flex.flex-col.w-full.justify-around.gap-10.mt-10.px-20(action="/admin/add-product", method="POST")
+          input(type="text", name="product", required, class="border-b-2 border-solid border-blue-500 p-2 bg-transparent outline-none", placeholder="(Product Name e.g iphone-14-pro-max)")
+          input(type="text", name="imageUrl", required, class="border-b-2 border-solid border-blue-500 p-2 bg-transparent outline-none", placeholder="Image URL (e.g https://pinterest.com)")
+          input(type="number", name="price", required, class="border-b-2 border-solid border-blue-500 p-2 bg-transparent outline-none", placeholder="Price (e.g 1200$)", step="0.01")
+          input(type="text", name="description", required, class="border-b-2 border-solid border-blue-500 p-2 bg-transparent outline-none", placeholder="Description (e.g Smartphone with a large 6.7-inch display, powerful A16 Bionic chip, advanced triple-camera system, and 5G connectivity.)")
+          button(type="submit", class="border-solid border-2 rounded-full border-blue-500 p-5 bg-blue-600 text-white mt-10") Submit
     include ../includes/end.pug
     

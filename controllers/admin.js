@@ -7,7 +7,16 @@ exports.getAddProducts = (req, res, next) => {
 };
 
 exports.postAddProducts = (req, res, next) => {
-  const product = new Product(req.body.product);
+  const productName = req.body.product;
+  const productImageUrl = req.body.imageUrl;
+  const productPrice = req.body.price;
+  const productDescription = req.body.description;
+  const product = new Product(
+    productName,
+    productImageUrl,
+    productPrice,
+    productDescription
+  );
   product.save();
   res.redirect('/admin/products');
 };

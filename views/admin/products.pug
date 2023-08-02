@@ -13,10 +13,12 @@ html(lang="en")
                 each products in prods
                     div.flex.justify-around.item-center.mt-10
                         a.flex.flex-center-justify-between.items-center.bg-white.border.border-gray-200.rounded-lg.shadow.md(href="#")
-                            img.object-fit.w-full.rounded-t-lg.h-96.md.object-contain(src='https://www.trippodo.com/734190-large_default/apple-iphone-14-pro-max-17-cm-67-dual-sim-ios-16-5g-512-gb-black.jpg', fill)
-                            div.flex.flex-col.justify-between.p-4.leading-normal
-                                h5.mb-2.text-2xl.font-bold.tracking-tight.text-gray-900.dark #{products.title}
-                                p.mb-3.font-normal.text-gray-700.dark Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                            img.object-fit.w-full.rounded-t-lg.h-96.md.object-contain(src=products.imageUrl, fill)
+                            div.flex.flex-col.justify-between.p-10.leading-normal
+                                h5.mb-2.text-2xl.font-bold.tracking-tight.text-gray-900.dark.uppercase #{products.title}
+                                div.flex.flex-col.gap-3.mt-4
+                                    h6.font-bold #{products.price}$
+                                    p.mb-3.font-normal.text-gray-700.dark #{products.description}
             else 
                 div.flex.flex-col.justify-center.items-center.gap-5.mt-40
                     h1.text-blue-600.font-extrabold.text-3xl Your pocket is empty!
