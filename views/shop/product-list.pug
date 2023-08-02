@@ -6,13 +6,7 @@ html(lang="en")
         title #{docTitle}
         script(src="https://cdn.tailwindcss.com")
     body
-        header
-            nav
-                ul.flex.justify-around.py-6
-                    li
-                        a(href="/") Shop
-                    li
-                        a.rounded-full.bg-blue-600.text-white.p-2.w-full(href="/admin/add-product") + Add Product
+        include ../includes/navigation.pug
         main.h-full.w-full.bg-gray-400.rounded-md.bg-clip-padding.backdrop-filter.backdrop-blur-sm.bg-opacity-10.border.border-gray-100.min-h-screen
             h1.flex.justify-center.items-center.font-extrabold.text-5xl.text-gray-600.py-5.w-full List of all the products
             if hasProducts
@@ -30,3 +24,4 @@ html(lang="en")
                         p.w-full.capitalize 
                         a(href="/admin/add-product")
                             button.rounded-full.bg-blue-600.text-white.p-4.w-full.mt-10 + Add Product
+        include ../includes/end.pug
