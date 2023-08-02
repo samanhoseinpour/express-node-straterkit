@@ -8,8 +8,9 @@ const filePath = path.join(
 );
 
 const getProductsFromFile = (cb) => {
-  fs.readFile(filePath, (fileContent, err) => {
+  fs.readFile(filePath, (err, fileContent) => {
     if (err) {
+      console.log(err);
       return cb([]);
     }
     cb(JSON.parse(fileContent));
