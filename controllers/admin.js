@@ -16,7 +16,7 @@ exports.fetchUserProducts = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render('../views/admin/products', {
       prods: products,
-      pageTitle: 'Your Products',
+      docTitle: 'Your Products',
       path: '/admin/products',
     });
   });

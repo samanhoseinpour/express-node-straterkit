@@ -4,7 +4,7 @@ exports.getProducts = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render('shop/product-list', {
       prods: products,
-      docTitle: 'My Products',
+      docTitle: 'All Products',
       homePath: '/product-list',
       hasProducts: products.length > 0,
     });
@@ -15,7 +15,7 @@ exports.getIndex = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render('shop/index', {
       prods: products,
-      docTitle: 'All Products',
+      docTitle: 'E-Commerce - Online Store',
       homePath: '/',
       hasProducts: products.length > 0,
     });
