@@ -9,19 +9,4 @@ html(lang="en")
         include ../includes/navigation.pug
         main.h-full.w-full.bg-gray-400.rounded-md.bg-clip-padding.backdrop-filter.backdrop-blur-sm.bg-opacity-10.border.border-gray-100.min-h-screen
             h1.flex.justify-center.items-center.font-extrabold.text-5xl.text-gray-600.py-5.w-full List of all the products
-            if hasProducts
-                each products in prods
-                    div.flex.justify-around.item-center.mt-10
-                        a.flex.flex-center-justify-between.items-center.bg-white.border.border-gray-200.rounded-lg.shadow.md(href="#")
-                            img.object-fit.w-full.rounded-t-lg.h-96.md.object-contain(src='https://www.trippodo.com/734190-large_default/apple-iphone-14-pro-max-17-cm-67-dual-sim-ios-16-5g-512-gb-black.jpg', fill)
-                            div.flex.flex-col.justify-between.p-4.leading-normal
-                                h5.mb-2.text-2xl.font-bold.tracking-tight.text-gray-900.dark #{products.title}
-                                p.mb-3.font-normal.text-gray-700.dark Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-            else 
-                div.flex.flex-col.justify-center.items-center.gap-5.mt-40
-                    h1.text-blue-600.font-extrabold.text-3xl Your pocket is empty!
-                    div
-                        p.w-full.capitalize 
-                        a(href="/admin/add-product")
-                            button.rounded-full.bg-blue-600.text-white.p-4.w-full.mt-10 + Add Product
         include ../includes/end.pug
