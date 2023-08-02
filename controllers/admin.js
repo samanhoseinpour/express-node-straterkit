@@ -11,14 +11,3 @@ exports.postAddProducts = (req, res, next) => {
   product.save();
   res.redirect('/');
 };
-
-exports.getProducts = (req, res, next) => {
-  Product.fetchAll((products) => {
-    res.render('../views/shop/product-list', {
-      prods: products,
-      docTitle: 'My Shop',
-      homePath: '/',
-      hasProducts: products.length > 0,
-    });
-  });
-};
