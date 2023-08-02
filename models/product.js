@@ -8,7 +8,7 @@ const filePath = path.join(
 );
 
 const getProductsFromFile = (cb) => {
-  fs.readFile(filePath, (err, fileContent) => {
+  fs.readFile(filePath, (fileContent, err) => {
     if (err) {
       return cb([]);
     }
