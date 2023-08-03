@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{docTitle}
+        script(src="https://cdn.tailwindcss.com")
+    body.overflow-hidden
+        include ../includes/navigation.pug
+        div.flex.justify-around.items-center.px-5.mt-10
+            h1.border-b-2.border-blue-900.text-extrabold.text-6xl.uppercase.text-gray-400.pb-1.w-full #{title}
+            img.object-contain.w-80.h-80(src=`${imageUrl}`, alt=title)
+        div.flex.flex-col.gap-3.font-semibold.px-10
+            li #{price}$
+            li #{description}
+        form.text-center(action="/add-to/cart" method="POST") 
+            button.rounded-full.bg-blue-600.text-white.p-4.mt-40.w-full + Add To Cart
+        include ../includes/end.pug
