@@ -8,7 +8,7 @@ html(lang="en")
     body 
         include ../includes/navigation.pug
         main.h-full.w-full.bg-gray-400.rounded-md.bg-clip-padding.backdrop-filter.backdrop-blur-sm.bg-opacity-10.border.border-gray-100.min-h-screen
-            h1.flex.justify-center.items-center.font-extrabold.text-5xl.text-gray-600.py-5.w-full List of all my products
+            h1.flex.justify-center.items-center.font-extrabold.text-5xl.text-gray-600.py-5.w-full Shopping Cart
             if hasProducts
                 each products in prods
                     div.flex.justify-around.item-center.mt-10
@@ -25,9 +25,9 @@ html(lang="en")
                                         button.text-dark-500(type="submit") Delete          
             else 
                 div.flex.flex-col.justify-center.items-center.gap-5.mt-40
-                    h1.text-blue-600.font-extrabold.text-3xl Your pocket is empty!
+                    h1.text-blue-600.font-extrabold.text-3xl Your Cart is empty!
                     div
                         p.w-full.capitalize 
-                        a(href="/admin/add-product")
-                            button.rounded-full.bg-blue-600.text-white.p-4.w-full.mt-10 + Add Product
+                        a(href="/products")
+                            button.rounded-full.bg-blue-600.text-white.p-4.w-full.mt-10 + Our Products
         include ../includes/end.pug
