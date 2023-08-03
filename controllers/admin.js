@@ -18,7 +18,7 @@ exports.postAddProducts = (req, res, next) => {
     productDescription
   );
   product.save();
-  res.redirect('/admin/products');
+  res.redirect('/products');
 };
 
 exports.fetchUserProducts = (req, res, next) => {
