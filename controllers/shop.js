@@ -19,6 +19,7 @@ exports.getProduct = (req, res, next) => {
       imageUrl: products.imageUrl,
       price: products.price,
       description: products.description,
+      id: products.id,
     });
   });
 };
@@ -37,6 +38,12 @@ exports.getCart = (req, res, next) => {
   res.render('shop/cart', {
     docTitle: 'Your Shopping Cart',
   });
+};
+
+exports.postCart = (req, res, next) => {
+  const prodId = req.body.productId;
+  console.log(prodId);
+  res.redirect('/cart');
 };
 
 exports.checkOut = (req, res, next) => {
