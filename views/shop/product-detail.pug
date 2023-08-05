@@ -13,6 +13,7 @@ html(lang="en")
         div.flex.flex-col.gap-3.font-semibold.px-10
             li #{price}$
             li #{description}
-        form.text-center(action="/add-to/cart" method="POST") 
+        form.text-center(action="/cart" method="POST") 
             button.rounded-full.bg-blue-600.text-white.p-4.mt-40.w-full + Add To Cart
+            input(type='hidden' name='productId' value=id)
         include ../includes/end.pug

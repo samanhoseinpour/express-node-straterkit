@@ -21,8 +21,9 @@ html(lang="en")
                                     p.mb-3.font-normal.text-gray-700.dark #{products.description}
                                 div.flex.mt-10.justify-around.items-center
                                     a.text-dark-500(href=`/products/${products.id}`) Details
-                                    form(action="/add-to/cart" method="POST") 
+                                    form(action="/cart" method="POST") 
                                         button.rounded-full.bg-blue-600.text-white.p-4 + Add To Cart
+                                        input(type='hidden' name='productId' value=products.id)
                                 
             else 
                 div.flex.flex-col.justify-center.items-center.gap-5.mt-40
